@@ -1,13 +1,13 @@
 {
   "version": "0.7.0",
-  "proposedName": "MetaMask Template Snap",
   "description": "A MetaMask Snap template.",
+  "proposedName": "MetaMask Template Snap",
   "repository": {
     "type": "git",
     "url": "https://github.com/MetaMask/snap-template.git"
   },
   "source": {
-    "shasum": "W4FN/2A1mQSjjrO95MGptw7pr+UR8913AOIksoajQSo=",
+    "shasum": "/khPlrCO84mScP9+zC7pYEP0M8c4oj5Q73iLmw9IajA=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
@@ -18,7 +18,18 @@
     }
   },
   "initialPermissions": {
-    "snap_confirm": {}
+    "snap_confirm": {},
+    "snap_notify": {},
+    "endowment:cronjob": {
+      "jobs": [
+        {
+          "expression": "/2* * * * *",
+          "request": {
+            "method": "cronJob"
+          }
+        }
+      ]
+    }
   },
   "manifestVersion": "0.1"
 }

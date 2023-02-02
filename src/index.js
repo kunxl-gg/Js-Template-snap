@@ -17,3 +17,23 @@ module.exports.onRpcRequest = async ({ origin, request }) => {
       throw new Error('Method not found.');
   }
 };
+
+
+module.exports.onCronjob = async ({ request }) => {
+  switch (request.method) {
+    case 'cronJob':
+      console.log("this is working");
+      return await wallet.request({
+        method: 'snap_notify',
+        params: [
+          {
+            type: 'inApp',
+            message: `Hello, world!`,
+          },
+        ],
+      });
+
+    default:
+      throw new Error('Method not found.');
+  }
+}
